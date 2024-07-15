@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const filterNameInput = document.getElementById("filterName");
   const filterAmountInput = document.getElementById("filterAmount");
   const filterButton = document.getElementById("filterButton");
+  const filterInput = document.querySelector("input");
   const transactionChart = document
     .getElementById("transactionChart")
     .getContext("2d");
@@ -99,7 +100,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  filterButton.addEventListener("click", displayCustomerTransactions);
+  filterButton.addEventListener("key", displayCustomerTransactions);
+  filterInput.addEventListener("input", displayCustomerTransactions);
 
   displayCustomerTransactions();
 });
